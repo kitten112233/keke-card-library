@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>克克卡库 · v4.1.5</title>
+<title>克克卡库 · v4.1.6</title>
 <style>
 :root{
   --p:#F2ECE2;--p2:#FFFDF8;--p3:#E8DDCC;--p4:#D6C6B2;
@@ -990,7 +990,7 @@ mark{background:rgba(184,150,62,.3);color:var(--gold)}
 </div>
 
 <div class="topbar">
-  <div class="logo" aria-label="克克卡库 4.1.5"><span class="logo-line"><span class="logo-m">克克卡库</span></span><span class="logo-s"><span class="logo-en">CARD ARCHIVE</span><span class="logo-v">v4.1.5</span></span></div>
+  <div class="logo" aria-label="克克卡库 4.1.6"><span class="logo-line"><span class="logo-m">克克卡库</span></span><span class="logo-s"><span class="logo-en">CARD ARCHIVE</span><span class="logo-v">v4.1.6</span></span></div>
   <div class="sbox"><input type="text" id="searchInput" placeholder="Search cards..." autocomplete="off"><span class="sico">⌕</span></div>
   <button class="hbtn" id="selectModeBtn" onclick="toggleSelectMode()">选择</button>
   <button class="hbtn theme-btn" id="themeBtn" onclick="toggleTheme()"><span class="theme-symbol">✣</span></button>
@@ -1722,12 +1722,12 @@ function styleAIBriefText(){
  const name=(document.getElementById('styleProfileName')?.value||'我的风格').trim()||'我的风格',base=currentEditorBase();
  const palette=styleTemplate(editorPaletteVars('light'),name,base,editorPaletteVars('dark'));
  return [
- '你是克克卡库 v4.1.5 的界面风格设计师。请根据我接下来补充的审美要求，设计一份可直接导入“风格工坊”的完整 CSS。','','【应用与运行环境】',
+ '你是克克卡库 v4.1.6 的界面风格设计师。请根据我接下来补充的审美要求，设计一份可直接导入“风格工坊”的完整 CSS。','','【应用与运行环境】',
  '- 克克卡库是单页、离线优先的 Android WebView 卡库，界面代码位于同一份 HTML 中。','- 当前视觉底稿：'+BUILTIN_STYLE_NAMES[base]+'（代码值 '+base+'）。','- 目标风格名称：'+name+'。','- 只能修改外观，不能修改、隐藏、删除或读取卡片正文、世界书、聊天记录与本地数据。','- 快速预览是轻量浏览，只呈现基础信息、标签、版本、链接、备注、附加区与详情入口；不得显示或新增卡片简介。','',
  '【必须交付】','1. 同时提供日间和夜间完整配色，18 个 --kaku-* 颜色变量一个都不能少。','2. 夜间弹窗必须明显暗于弹窗正文，弹窗正文/背景对比度至少 4.5:1，标题至少 4.5:1；不要只把日间颜色机械反相。','3. 在 KAKU_ADVANCED_START/END 中提供高级 CSS；可设计字体、圆角、边框、阴影、渐变、材质和轻量动画。','4. 动画只能使用 transform、opacity、background-position 等轻量属性，并提供 @media (prefers-reduced-motion: reduce) 的静态回退。','5. 最终答复只输出一份完整 CSS 代码块，不要解释，不要省略变量，不要输出 HTML 或 JavaScript。','',
  '【18 个语义颜色变量及作用】','--kaku-page-bg 页面总背景；--kaku-card-bg 卡片/主面板背景；--kaku-panel-bg 输入框与次级面板；--kaku-modal-bg 弹窗专用背景；','--kaku-body-text 全局正文；--kaku-topbar-text 顶部栏；--kaku-nav-text 分区/筛选导航；--kaku-stats-text 辅助文字、统计与弱提示；','--kaku-card-title 卡片名；--kaku-card-body 首页与完整详情中的卡片简介及阅读正文；--kaku-note-text 首页、快速预览与详情中的备注；--kaku-tag-text 各处主标签；','--kaku-button-text 普通按钮；--kaku-modal-title 弹窗与阅读标题；--kaku-modal-text 弹窗正文；--kaku-setting-title 设置板块标题；--kaku-accent 强调色；--kaku-danger 危险操作。','注意：这些是独立语义色。修改弹窗正文不得改动全局正文、卡片正文、按钮或危险色。','- 详情顶部备注横幅必须保持可读：正文使用弹窗正文色，背景使用弹窗背景色，备注色只用于书签边框或小标签；不得让同一种备注色同时充当前景和背景。','',
  '【可编辑区域与真实选择器】','页面 body；顶部 .topbar；品牌 .logo/.logo-m/.logo-s/.logo-v；搜索 .sbox；分区 .secbar/.stab；筛选 .filterbar-wrap/.fchip；统计 .statsbar；','网格 .grid-layout/.list-layout/.magazine-layout；卡片 .card-item/.cov-wrap/.cinfo/.cname/.cdesc/.cnote/.ctag；文件夹 .folder-cover/.folder-name；','弹窗 .modal-mask/.modal-box/.modal-hd/.modal-title/.modal-body；快速预览 .qp-name/.qp-note/.qp-tag/.qp-sec-hd；阅读 .read-box/.read-body；设置 .settings-page-nav/.settings-page-tab/.set-card；','输入 input/select/textarea/.inp；按钮 button/.actbtn/.hbtn；主加号 #mainFab；展开菜单 .fab-menu button；详情备注横幅 #detailModal .note-banner；AI区 .ai-manage-panel/.ai-assistant-bubble。','',
- '【不可破坏的布局边界】','- 不得改变 .topbar 的核心 flex 结构；“克克卡库”必须完整显示，不能挤压搜索框，不能覆盖 v4.1.5。','- 不得把设置分类栏、板块标题或普通内容设置成 fixed/sticky；不得制造遮挡、横向滚动或不可点击区域。','- 不得隐藏关闭按钮、搜索、导入、备份、恢复、AI诊断等功能；不得使用全局 * 选择器重置布局。','- 手机优先，至少兼容 280px 宽度与 1.5 倍字号；必要时用 @media (max-width:420px)。','- 禁止 @import、url()、外部字体/图片、expression、javascript:、behavior、HTML 标签和脚本。可使用系统字体及 CSS 渐变。','',
+ '【不可破坏的布局边界】','- 不得改变 .topbar 的核心 flex 结构；“克克卡库”必须完整显示，不能挤压搜索框，不能覆盖 v4.1.6。','- 不得把设置分类栏、板块标题或普通内容设置成 fixed/sticky；不得制造遮挡、横向滚动或不可点击区域。','- 不得隐藏关闭按钮、搜索、导入、备份、恢复、AI诊断等功能；不得使用全局 * 选择器重置布局。','- 手机优先，至少兼容 280px 宽度与 1.5 倍字号；必要时用 @media (max-width:420px)。','- 禁止 @import、url()、外部字体/图片、expression、javascript:、behavior、HTML 标签和脚本。可使用系统字体及 CSS 渐变。','',
  '【当前配色底稿；可以重设计颜色，但必须保留相同变量名与两段结构】',palette,'','【标准答卷骨架】','在上面的两段 :root 配色之后继续输出：','/* KAKU_ADVANCED_START */','/* 这里写仅作用于上述真实选择器的高级 CSS */','@media (prefers-reduced-motion: reduce) { /* 关闭自定义无限动画与大幅过渡 */ }','/* KAKU_ADVANCED_END */','','现在先理解全部约束，再根据我随后提供的审美描述完成风格。若我的描述与可用性冲突，以文字可读、按钮可点、数据安全和窄屏不溢出为最高优先级。'
  ].join('\n');
 }
@@ -2485,11 +2485,12 @@ ${(()=>{const cls=getCardChatlogs(id);if(!cls.length)return'';return`<div class=
   if(wbBox){let timer;wbBox.addEventListener('scroll',()=>{clearTimeout(timer);timer=setTimeout(async()=>{const index=Math.round(wbBox.scrollLeft/Math.max(1,wbBox.clientWidth)),v=wbVersions[index];if(!v||card.activeWorldBookVersion===v.id)return;card.activeWorldBookVersion=v.id;card.worldBookEntries=v.entries;wbBox.parentElement.querySelectorAll('.wb-version-name').forEach((el,i)=>el.classList.toggle('active',i===index));const full=await dbG('cards',id);if(full){full.activeWorldBookVersion=v.id;full.worldBookEntries=v.entries;await dbP('cards',full)}},120)},{passive:true});}
   // Finish synchronous detail rendering before exposing the overlay.
   renderLinkSection(card);
-  startPresetDetailRender(id);
   await new Promise(resolve=>requestAnimationFrame(resolve));
   if(seq!==_detailOpenSeq||_detailCurrentId!==String(id))return;
   openModal('detailModal');
   cardBrowseOpened('detail',id);
+  // 预设条目分批渲染会检查弹窗已带 show；必须在 openModal 之后启动，否则第一批就退出，列表一直是空的。
+  startPresetDetailRender(id);
 
 
   // 详情大封面：从数据库按需取原图替换占位（只临时持有这一张，不影响列表内存）
@@ -5174,7 +5175,7 @@ const KAKU_KNOWLEDGE=[
  {id:'export',title:'导出原始文件和未推送',keys:'导出 原始文件 未推送 下载 卡库 ZIP 分批',text:'路径：设置 → 数据与安全 → 备份与恢复。原始文件可按全部、分区或具体项目导出；大量项目会分批并记录传输任务。用户导出通常保存到内部存储“Download/卡库”。“仅导出未推送”用于筛选尚未推送的项目。'}
 ];
 
-const AI_ASSISTANT_SYSTEM=`你是“克克卡库 v4.1.5”当前版本的专属功能助手与谨慎型故障排查助手。
+const AI_ASSISTANT_SYSTEM=`你是“克克卡库 v4.1.6”当前版本的专属功能助手与谨慎型故障排查助手。
 
 工作规则：
 1. 优先依据每轮提供的【卡库功能知识】回答，使用真实按钮名和路径；不要凭通用软件经验编造卡库不存在的入口。
@@ -5235,7 +5236,7 @@ function assistantUpdateReference(){if(!assistantCurrent)return;const q=document
 
 function assistantKnowledgeScore(entry,q){q=String(q||'').toLowerCase();let score=0;for(const k of (entry.title+' '+entry.keys).toLowerCase().split(/\s+/)){if(k&&q.includes(k))score+=Math.max(2,k.length);else if(k.length>1&&[...k].some(ch=>q.includes(ch)))score+=.35}return score}
 function assistantKnowledgeFor(q){const rows=KAKU_KNOWLEDGE.map(x=>({x,score:assistantKnowledgeScore(x,q)})).sort((a,b)=>b.score-a.score);const hit=rows.filter(v=>v.score>0).slice(0,8).map(v=>v.x);return hit.length?hit:KAKU_KNOWLEDGE.filter(x=>['settings','import','backup-diff','tag-mount'].includes(x.id))}
-function assistantAppConfig(){let safe={};try{safe=safetyInfo()}catch(e){}return{app:'克克卡库',version:'4.1.3',release:'4.1.3 · 增量备份、对白交互与酒馆皮肤预览',activeSection:S.activeSection,sections:[...(S.sections||[])],capabilities:['角色卡、世界书、预设、正则、工具、美化、其他资源自动识别导入','导入预检、损坏文件确认、ZIP分批与多文件夹扫描','版本绑定、Search In记忆、独立世界书与正则导出','笔记区：方形预览、正文预览、备注与链接自动保存、标签、富文本排版、高亮与底部工具栏','快速预览、链接备注、大小标签、分组、版本号','AI标签整理与AI诊断'],cardCount:(S.cards||[]).filter(x=>!x._delAt).length,filePickerPreference:importPickerMode()==='other'?'其他文件管理器':'系统文件',realtimeBackupConfigured:!!safe.ready,unfinishedTransfer:!!(transferSummary&&['running','paused','failed'].includes(transferSummary.status))}}
+function assistantAppConfig(){let safe={};try{safe=safetyInfo()}catch(e){}return{app:'克克卡库',version:'4.1.6',release:'4.1.6 · 云同步只传新增与修改的卡、世界书灯号可保存、网页版预设条目显示修复',activeSection:S.activeSection,sections:[...(S.sections||[])],capabilities:['角色卡、世界书、预设、正则、工具、美化、其他资源自动识别导入','导入预检、损坏文件确认、ZIP分批与多文件夹扫描','版本绑定、Search In记忆、独立世界书与正则导出','笔记区：方形预览、正文预览、备注与链接自动保存、标签、富文本排版、高亮与底部工具栏','快速预览、链接备注、大小标签、分组、版本号','AI标签整理与AI诊断'],cardCount:(S.cards||[]).filter(x=>!x._delAt).length,filePickerPreference:importPickerMode()==='other'?'其他文件管理器':'系统文件',realtimeBackupConfigured:!!safe.ready,unfinishedTransfer:!!(transferSummary&&['running','paused','failed'].includes(transferSummary.status))}}
 async function collectDiagnosisReport(){const report={schema:'kaku-ai-diagnosis-v1',checkedAt:new Date().toISOString()};try{report.native=window.AndroidDiagnosis?.environmentReport?JSON.parse(AndroidDiagnosis.environmentReport()||'{}'):{source:'browser'}}catch(e){report.native={source:'browser',reportError:diagSafeError(e)}}const database={open:!!db,counts:{},hadCardsSentinel:guardHadCards(),nativeGuard:guardStatus(),storageFaultThisSession:!!_dbStorageFault};try{for(const name of ['cards','cardIndex','meta','chatlogs'])database.counts[name]=db.objectStoreNames.contains(name)?await dbCount(name):null}catch(e){database.readError=diagSafeError(e)}report.database=database;try{const imp=await dbG('meta','importStageSummary'),rst=await dbG('meta','restoreStageSummary'),tr=await dbG('meta','transferSummary');report.tasks={import:imp?.value?{status:imp.value.status||'paused',completed:Number(imp.value.completed||0),total:Number(imp.value.total||0)}:null,restore:rst?.value?{status:rst.value.status||'paused'}:null,transfer:tr?.value?{type:tr.value.type||'',status:tr.value.status||'',completed:Number(tr.value.completed||0),total:Number(tr.value.total||0)}:null}}catch(e){report.tasks={readError:diagSafeError(e)}}return report}
 function assessDiagnosis(report){const items=[],n=report?.native||{},d=report?.database||{},c=d.counts||{},st=n.storage||{},pk=n.pickers||{},safe=n.safety||{};if(d.open&&!d.readError)items.push('数据库可只读访问，卡片记录 '+Number(c.cards||0)+' 张');else items.push('数据库只读检查未完成');if(d.hadCardsSentinel&&Number(c.cards||0)===0)items.push('需要谨慎：曾有卡哨兵与当前空库不一致，不要用空库备份覆盖旧备份');if(d.storageFaultThisSession)items.push('本次运行曾触发写入保护停止');if(Number(st.privateFreeMB)>=0)items.push('应用数据分区可用约 '+Number(st.privateFreeMB||0)+' MB');if(pk.systemFile===false&&pk.otherFileManager===true)items.push('系统文件入口不可用，但其他文件管理器可用（常见兼容差异）');if(safe.configured===false)items.push('实时备份未开启（可选状态）');else if(safe.configured&&(!safe.permissionPersisted||!safe.readable))items.push('实时备份目录需要重新确认权限');const ev=Array.isArray(n.recentEvents)?n.recentEvents:[],tv=[...ev].reverse().find(x=>x&&x.module==='tavern_network');if(tv)items.push('最近酒馆网络记录：'+String(tv.message||'').replace(/;/g,'，'));const dbEv=[...ev].reverse().find(x=>x&&x.module==='database'&&/danger|failed|Quota|Abort|Database/.test(String(x.message||'')));if(dbEv)items.push('最近数据库风险记录：'+String(dbEv.message||'').replace(/;/g,'，'));return items}
 const STARTUP_SELF_CHECK_ITEMS=[
@@ -7701,7 +7702,7 @@ setTimeout(fillStAuth,0);
 [data-style]:not([data-style="dream"]) .actbtn:active,[data-style]:not([data-style="dream"]) .fchip:active,[data-style]:not([data-style="dream"]) .lbtn:active,[data-style]:not([data-style="dream"]) .fab-menu button:active{transform:translateY(1px);opacity:.82}
 @media (prefers-reduced-motion:reduce){[data-style] .actbtn,[data-style] .fchip,[data-style] .lbtn,[data-style] #mainFab,[data-style] .fab-menu button{transition:none!important;transform:none!important}}
 
-/* 克克卡库 v4.1.5：所有主题都必须完整显示中文标题，主题只能改变气质，不能把字裁掉 */
+/* 克克卡库 v4.1.6：所有主题都必须完整显示中文标题，主题只能改变气质，不能把字裁掉 */
 .topbar .sbox{flex:1 1 auto!important;min-width:54px!important}
 .topbar>.logo{flex:0 0 clamp(78px,23vw,90px)!important;width:clamp(78px,23vw,90px)!important;min-width:clamp(78px,23vw,90px)!important;max-width:90px!important;overflow:hidden!important;margin-left:0!important;margin-right:0!important}
 .topbar>.logo .logo-line{display:block!important;width:100%!important;max-width:100%!important;overflow:visible!important;padding:0!important}

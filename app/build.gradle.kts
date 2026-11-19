@@ -9,8 +9,8 @@ android {
         applicationId = "com.operit.webviewapp"
         minSdk = 24
         targetSdk = 34
-        versionCode = 414
-        versionName = "4.1.4"
+        versionCode = 416
+        versionName = "4.1.6"
     }
     buildTypes {
         release {
